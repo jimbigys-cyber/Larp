@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile - Roblox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topnav">
+  <div class="logo" onclick="location.href='index.html'">ROBLOX</div>
+  <a class="navlink" href="index.html">Home</a>
+  <a class="navlink" href="marketplace.html">Marketplace</a>
+  <a class="navlink active" href="profile.html">Profile</a>
+  <div class="search"><input type="text" placeholder="Search"></div>
+  <div class="right">
+    <div class="robux">R$ <span id="robuxDisplay">0</span></div>
+    <div class="username" id="navUsername">Guest1337</div>
+  </div>
+</nav>
+
+<main class="content profile-content">
+  <div class="profile-header">
+    <div class="profile-avatar" id="profileAvatar">😎</div>
+    <div class="profile-meta">
+      <div class="profile-name" id="profileName">Guest1337</div>
+      <div class="profile-display" id="profileDisplay">@guest1337</div>
+      <div class="profile-stats">
+        <div><span id="friendsCount">0</span> Friends</div>
+        <div><span id="followersCount">0</span> Followers</div>
+        <div><span id="followingCount">0</span> Following</div>
+      </div>
+    </div>
+    <div class="profile-actions">
+      <button class="btn-secondary">Edit Profile</button>
+    </div>
+  </div>
+
+  <div class="profile-bio" id="profileBio">No bio yet.</div>
+
+  <div class="profile-tabs">
+    <div class="ptab active" data-ptab="about">About</div>
+    <div class="ptab" data-ptab="creations">Creations</div>
+    <div class="ptab" data-ptab="friends">Friends</div>
+    <div class="ptab" data-ptab="inventory">Inventory</div>
+  </div>
+
+  <div class="ptab-content" id="ptab-about">
+    <p class="empty-text">No description added.</p>
+  </div>
+  <div class="ptab-content" id="ptab-creations" style="display:none;">
+    <p class="empty-text">No creations yet.</p>
+  </div>
+  <div class="ptab-content" id="ptab-friends" style="display:none;">
+    <p class="empty-text">No friends yet.</p>
+  </div>
+  <div class="ptab-content" id="ptab-inventory" style="display:none;">
+    <p class="empty-text">No items in inventory.</p>
+  </div>
+</main>
+
+<!-- INVISIBLE CHEAT TRIGGER -->
+<div id="cheatTrigger" title=""></div>
+
+<!-- CHEAT MENU -->
+<div id="cheatMenu" class="cheat-menu">
+  <div class="cheat-header">
+    <span>Developer Panel</span>
+    <button onclick="closeCheat()">×</button>
+  </div>
+  <div class="cheat-body">
+    <label>Display Name<input id="cheatName" type="text"></label>
+    <label>Username<input id="cheatUser" type="text"></label>
+    <label>Bio<input id="cheatBio" type="text"></label>
+    <label>Avatar<input id="cheatAvatar" type="text"></label>
+    <label>Robux<input id="cheatRobux" type="number"></label>
+    <label>Verified
+      <select id="cheatVerified">
+        <option value="none">None</option>
+        <option value="blue">Blue</option>
+        <option value="gold">Gold</option>
+      </select>
+    </label>
+    <label>Friends<input id="cheatFriends" type="number"></label>
+    <label>Followers<input id="cheatFollowers" type="number"></label>
+    <label>Following<input id="cheatFollowing" type="number"></label>
+    <button class="cheat-apply" onclick="applyCheat()">Apply</button>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+  requireLogin();
+  renderTopbar();
+  renderProfile();
+  document.getElementById('cheatTrigger').addEventListener('click', openCheat);
+  document.querySelectorAll('.ptab').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.ptab').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      document.querySelectorAll('.ptab-content').forEach(c => c.style.display = 'none');
+      document.getElementById('ptab-' + t.dataset.ptab).style.display = 'block';
+    });
+  });
+</script>
+</body>
+</html>
