@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marketplace - Roblox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="topnav">
+  <div class="logo" onclick="location.href='index.html'">ROBLOX</div>
+  <a class="navlink" href="index.html">Home</a>
+  <a class="navlink active" href="marketplace.html">Marketplace</a>
+  <a class="navlink" href="profile.html">Profile</a>
+  <div class="search"><input type="text" placeholder="Search"></div>
+  <div class="right">
+    <div class="robux">R$ <span id="robuxDisplay">0</span></div>
+    <div class="username" id="navUsername" onclick="location.href='profile.html'">Guest1337</div>
+  </div>
+</nav>
+
+<main class="content">
+  <h2 class="section-title">Marketplace</h2>
+  <div class="market-tabs">
+    <button class="mtab active" data-mtab="limiteds">Limiteds</button>
+    <button class="mtab" data-mtab="collectibles">Collectibles</button>
+    <button class="mtab" data-mtab="ugc">UGC</button>
+    <button class="mtab" data-mtab="faces">Faces</button>
+  </div>
+  <div class="market-grid" id="marketGrid"></div>
+</main>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+<script>
+  requireLogin();
+  renderTopbar();
+  renderMarket('limiteds');
+  document.querySelectorAll('.mtab').forEach(t => {
+    t.addEventListener('click', () => {
+      document.querySelectorAll('.mtab').forEach(x => x.classList.remove('active'));
+      t.classList.add('active');
+      renderMarket(t.dataset.mtab);
+    });
+  });
+</script>
+</body>
+</html>
