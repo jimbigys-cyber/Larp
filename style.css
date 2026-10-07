@@ -1,0 +1,112 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Gotham', 'Helvetica Neue', Arial, sans-serif; }
+body { background: #e3e3e3; color: #333; min-height: 100vh; }
+
+/* TOP NAV */
+.topnav { background: #232527; height: 48px; display: flex; align-items: center; padding: 0 20px; gap: 22px; position: sticky; top: 0; z-index: 100; }
+.topnav .logo { color: #fff; font-size: 22px; font-weight: 900; letter-spacing: 0.5px; cursor: pointer; }
+.topnav .navlink { color: #b8b8b8; font-size: 14px; text-decoration: none; }
+.topnav .navlink:hover { color: #fff; }
+.topnav .navlink.active { color: #fff; font-weight: 700; }
+.topnav .search { flex: 1; max-width: 400px; }
+.topnav .search input { width: 100%; padding: 6px 14px; border-radius: 4px; border: none; font-size: 13px; background: #3a3d40; color: #fff; outline: none; }
+.topnav .search input::placeholder { color: #888; }
+.topnav .right { margin-left: auto; display: flex; align-items: center; gap: 18px; }
+.topnav .robux { color: #00b06f; font-size: 13px; font-weight: 700; }
+.topnav .username { color: #fff; font-size: 13px; cursor: pointer; }
+
+/* CONTENT */
+.content { max-width: 1100px; margin: 0 auto; padding: 24px 20px; }
+.section-title { font-size: 20px; font-weight: 700; margin: 24px 0 14px; color: #000; }
+.section-title:first-child { margin-top: 0; }
+
+/* GAME GRID */
+.game-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
+.game-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.1s; }
+.game-card:active { transform: scale(0.98); }
+.game-thumb { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 52px; background: linear-gradient(135deg, #4a6cf7, #a855f7); }
+.game-name { padding: 8px 10px; font-size: 12px; font-weight: 700; color: #000; }
+.game-players { padding: 0 10px 8px; font-size: 10px; color: #888; }
+
+/* LOGIN */
+.login-body { background: #fff; }
+.login-page { display: flex; min-height: 100vh; }
+.login-left { flex: 1; background: #00a2ff; color: #fff; display: flex; flex-direction: column; justify-content: center; padding: 60px; }
+.login-logo { font-size: 60px; font-weight: 900; letter-spacing: 2px; }
+.login-tagline { font-size: 22px; font-weight: 300; margin-top: 10px; }
+.login-sub { font-size: 14px; margin-top: 20px; opacity: 0.9; }
+.login-right { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px; }
+.login-card { width: 100%; max-width: 380px; }
+.login-card h2 { font-size: 24px; color: #000; margin-bottom: 20px; }
+.login-card input { width: 100%; padding: 14px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px; outline: none; }
+.login-card input:focus { border-color: #00a2ff; }
+.login-btn { width: 100%; padding: 14px; background: #00a2ff; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: 700; cursor: pointer; }
+.login-btn:active { background: #0090e0; }
+.login-links { display: flex; justify-content: center; gap: 8px; font-size: 12px; color: #00a2ff; margin-top: 16px; cursor: pointer; }
+.login-note { text-align: center; font-size: 11px; color: #aaa; margin-top: 24px; }
+
+/* PROFILE */
+.profile-content { max-width: 900px; }
+.profile-header { display: flex; gap: 24px; align-items: center; padding: 24px 0; }
+.profile-avatar { width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, #4a6cf7, #a855f7); display: flex; align-items: center; justify-content: center; font-size: 60px; flex-shrink: 0; }
+.profile-meta { flex: 1; }
+.profile-name { font-size: 28px; font-weight: 800; color: #000; display: flex; align-items: center; gap: 8px; }
+.profile-display { font-size: 16px; color: #666; margin-top: 2px; }
+.profile-stats { display: flex; gap: 24px; margin-top: 12px; font-size: 13px; color: #666; }
+.profile-stats span { font-weight: 800; color: #000; }
+.profile-actions { display: flex; gap: 8px; }
+.btn-secondary { padding: 10px 20px; background: #fff; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; }
+.btn-secondary:hover { background: #f5f5f5; }
+.profile-bio { font-size: 14px; color: #444; padding: 16px 0; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; }
+.profile-tabs { display: flex; gap: 24px; padding: 16px 0; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
+.ptab { font-size: 14px; color: #666; cursor: pointer; padding-bottom: 6px; }
+.ptab.active { color: #000; font-weight: 700; border-bottom: 2px solid #000; }
+.empty-text { font-size: 13px; color: #999; text-align: center; padding: 40px 0; }
+
+/* VERIFIED BADGES */
+.verified-blue { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #1d9bf0; }
+.verified-gold { display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #f5c518; }
+
+/* MARKETPLACE */
+.market-tabs { display: flex; gap: 8px; margin-bottom: 18px; }
+.mtab { padding: 8px 18px; background: #e0e0e0; border: none; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; color: #555; }
+.mtab.active { background: #000; color: #fff; }
+.market-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+.market-item { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.1s; }
+.market-item:active { transform: scale(0.98); }
+.market-thumb { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 44px; }
+.market-thumb.limiteds { background: linear-gradient(135deg, #ffd700, #ff8c00); }
+.market-thumb.collectibles { background: linear-gradient(135deg, #a855f7, #ec4899); }
+.market-thumb.ugc { background: linear-gradient(135deg, #00c8ff, #0080ff); }
+.market-thumb.faces { background: linear-gradient(135deg, #22c55e, #84cc16); }
+.market-info { padding: 8px 10px; }
+.market-name { font-size: 11px; font-weight: 700; color: #000; }
+.market-tag { font-size: 9px; color: #ff8c00; font-weight: 800; text-transform: uppercase; margin-top: 2px; }
+.market-price { font-size: 11px; color: #00b06f; font-weight: 800; margin-top: 4px; }
+
+/* INVISIBLE CHEAT TRIGGER */
+#cheatTrigger { position: fixed; top: 60px; right: 24px; width: 60px; height: 60px; background: transparent; z-index: 999; cursor: pointer; }
+
+/* CHEAT MENU */
+.cheat-menu { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 340px; background: #0f0f14; border-radius: 12px; border: 1px solid #2a2a3a; z-index: 1000; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.cheat-menu.open { display: block; }
+.cheat-header { display: flex; justify-content: space-between; padding: 14px 18px; background: #15151f; border-bottom: 1px solid #2a2a3a; color: #00c8ff; font-weight: 800; font-size: 14px; letter-spacing: 0.5px; }
+.cheat-header button { background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; line-height: 1; }
+.cheat-body { padding: 16px; display: flex; flex-direction: column; gap: 12px; max-height: 560px; overflow-y: auto; }
+.cheat-body label { display: flex; flex-direction: column; gap: 4px; font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+.cheat-body input, .cheat-body select { padding: 10px 12px; background: #1a1a26; border: 1px solid #2a2a3a; border-radius: 6px; color: #fff; font-size: 13px; outline: none; }
+.cheat-body input:focus, .cheat-body select:focus { border-color: #00c8ff; }
+.cheat-apply { padding: 12px; background: linear-gradient(135deg, #00c8ff, #0080ff); border: none; border-radius: 6px; color: #fff; font-weight: 800; font-size: 13px; cursor: pointer; margin-top: 6px; }
+.cheat-apply:active { transform: scale(0.97); }
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .topnav { padding: 0 12px; gap: 12px; }
+  .topnav .search { max-width: 150px; }
+  .topnav .navlink { font-size: 12px; }
+  .login-page { flex-direction: column; }
+  .login-left { padding: 30px; min-height: 200px; }
+  .login-logo { font-size: 40px; }
+  .profile-header { flex-direction: column; text-align: center; }
+  .profile-meta { text-align: center; }
+  .profile-stats { justify-content: center; }
+}
